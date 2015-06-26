@@ -7,9 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render 'layouts/bootstrap' %>
-<%= render 'layouts/navbar' %>
-<%= yield %>
-<%= render 'layouts/footer' %>
+  <%= render 'layouts/bootstrap' %>
+  <%= render 'layouts/navbar' %>
+  <div class=container-fluid">
+    <%= yield %>
+    <%= render 'layouts/footer' %>
+  </div>
 </body>
 </html>
