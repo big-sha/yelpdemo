@@ -77,4 +77,6 @@ Yelpdemo::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+  #Required for Devise. Remember to change the localhost to actual application host
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end
