@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_review, only: [:edit, :update, :destroy]
   before_action :set_restaurant
+  before_action :authenticate_user!
 
   respond_to :html
 
@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
 
     respond_to do |format|
       if @review.save
-        format.html { redirect_to root_path, notice: 'Review was successfully created.' }
+        format.html { redirect_to @restaurant, notice: 'Review was successfully created.' }
         format.json { render :show, status: :created, location: @review }
       end
     end
